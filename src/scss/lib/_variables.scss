@@ -1,0 +1,44 @@
+// fonts
+$icon-font-family: "icons" !default;
+$primary-font-family: 'Roboto', sans-serif;
+$secondary-font-family: 'Roboto Condensed', sans-serif;
+ 
+ 
+// paths
+$icon-font-path: "../../fonts" !default;
+
+// icons content
+$icons_mapping:  
+    "clear-sky"         "01"   "\e900",
+    "few-clouds"        "02"   "\e901",
+    "scattered-clouds"  "03"   "\e902",
+    "broken-clouds"     "04"   "\e903",
+    "shower-rain"       "09"   "\e904",
+    "rain"              "10"   "\e905",
+    "thunderstorm"      "11"   "\e906",
+    "snow"              "13"   "\e907",
+    "mist"              "50"   "\e908";
+
+
+// gradient colors
+$gradient_colors_mapping:
+    "clear-sky"         "01"   #ff9872  #ffdb4e,  
+    "few-clouds"        "02"   #03B9A5  #30ECEB, 
+    "scattered-clouds"  "03"   #3E93B2  #44EDEC,
+    "broken-clouds"     "04"   #3E93B2  #44EDEC,    
+    "shower-rain"       "09"   #066E94  #6fd4fb,  
+    "rain"              "10"   #24A0CD  #6fd4fb,   
+    "thunderstorm"      "11"   #0A465D  #61A1BA,
+    "snow"              "13"   #74A3DE  #DCEDF4,    
+    "mist"              "50"   #919494  #D6D8D9;
+
+$color_1: #777777;
+$color_2: #fff;
+
+$breakpoints: (
+    'xs'    : 575.98px,
+    'sm'    : 767.98px,
+    'md'    : 991.98px,
+    'lg'    : 1199.98px
+);
+

@@ -1,0 +1,5 @@
+@each $desc,$name , $color1, $color2 in $gradient_colors_mapping {
+    .color-#{$name}d , .color-#{$name}n  {
+        @include linear-gradient(   $color1  , $color2  );
+    }
+}
