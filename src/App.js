@@ -10,21 +10,26 @@ const App = () => {
   const dispatch = useDispatch()
   const { 
             filtredForcast, 
-            cityName
-          
+            cityName, 
+            pending, 
+            loading, 
+            status 
         } = useSelector((state) => ({
             filtredForcast: state.forecastReducer.filtredForcast,
             cityName: state.forecastReducer.cityName,
-         
+            pending: state.infoReducer.pending,
+            loading: state.infoReducer.loading,
+            status: state.infoReducer.status,
         }))
  
   useEffect(() => {
 
     const cityId = helpers.getCityId()
   
- 
+    if (cityId) 
       dispatch(actionForecast.setForecastById(cityId))
-    
+    else 
+      dispatch(actionInfo.setLoading(false))
 
   },[])
 
@@ -55,14 +60,23 @@ const App = () => {
                 <div className="result">
                 {
                   filtredForcast.map((forcatsData, index) => (
-                     console.log(forcatsData)
+                    <DailyForecast key={index} forcatsData={forcatsData} />
                   ))
                 }
                 </div>
               }
-              
+              {
+               status === 'notFound'  &&
+                <div className="info">
+                  <div className="info__alert">
+                    Location not found!
+                  </div>
+                </div>
+              }
           </>
-          
+          {
+            (loading || pending) && <div className="loader"></div>
+          }
     </div>
   )
 }

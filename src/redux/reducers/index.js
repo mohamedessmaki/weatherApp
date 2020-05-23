@@ -4,5 +4,5 @@ import { forecastReducer } from "./reducer.forecast";
 
 export default combineReducers({
   forecastReducer,
-  infoReducer
+  infoReducer,
 });
