@@ -22,6 +22,14 @@ const App = () => {
             status: state.infoReducer.status,
         }))
  
+        const findForcast = () => {
+          inputRef.current.focus()
+          const value = inputRef.current.value
+          value !== '' && 
+          dispatch(actionForecast.setForecastByName(value))
+        }
+
+        
   useEffect(() => {
 
     const cityId = helpers.getCityId()
@@ -43,15 +51,19 @@ const App = () => {
                 className="search__input"
                 type="text"
                 defaultValue={cityName}
+                onKeyPress = { e => {
+                  e.key === 'Enter' && 
+                  findForcast()
+                   
+                }}
               />
               <button
                 className="search__button"
-                onClick={() => {
-                  inputRef.current.focus()
-                  const value = inputRef.current.value
-                  value !== '' && 
-                  dispatch(actionForecast.setForecastByName(value))
-                }}>
+                onClick = { e => {
+                  e.preventDefault()
+                  findForcast()
+                }}
+                >
                 Find
               </button>
             </div>
