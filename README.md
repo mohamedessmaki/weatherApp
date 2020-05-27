@@ -15,7 +15,7 @@ Or hardcode as a value of data-cityid attribute in the in html tag  Eg:
 `<div  id="root"  data-cityid="524901"></div>`
 
 You will also see any lint errors in the console.
-### `yarn test`
+### `yarn test --watchAll`
 
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
